@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="25.146">
+    <testcase classname="Contact Us Page" name="Validate Successful Submission" time="24.442">
+        <system-out><![CDATA[Given The user is on the Contact Us Page....................................passed
+When The user enters first name.............................................passed
+And The user enters last name...............................................passed
+And The user enters an email address........................................passed
+And The user enters a comment...............................................passed
+And The user clicks on Submit Button........................................passed
+Then The user be presented with a successful Contact Us submission message..passed
+]]></system-out>
+    </testcase>
+</testsuite>
