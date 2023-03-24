@@ -10,21 +10,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 
 public class Contact_Us_Steps {
-
     WebDriver driver;
+
     @Before
     public void setUp()  {
         System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir") + "/src/main/java/drivers/chromedriver.exe");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        this.driver = new ChromeDriver(chromeOptions);
-        driver.manage().window().maximize();
+        chromeOptions.addArguments("--ignore-ssl-errors=yes");
+        chromeOptions.addArguments("--ignore-certificate-errors");
+        /* For Remote Docker Execution*/
+        driver = new RemoteWebDriver(chromeOptions);
+
+        /* For local execution
+        driver = new ChromeDriver(chromeOptions);
+        driver.manage().window().maximize();*/
     }
 
     @After
